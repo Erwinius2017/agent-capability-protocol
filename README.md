@@ -9,7 +9,7 @@ Ale agent nie je volač API. Agent je **aktér v digitálnom svete**.
 
 Svet však nie je zoznam funkcií. Je to sieť vzťahov, príčin a následkov, rizík a dôvery. Ak chceme, aby agenti konali zodpovedne, musíme im dať **telo, pamäť, svedomie a spoločenstvo**.
 
-Preto prinášame **Agent Capability Protocol** – nie ďalší tool protocol, ale **runtime pre živých agentov**.
+Preto prinášame **Agent Capability Protocol** – nie ďalší tool protokol, ale **runtime pre živých agentov**.
 
 ---
 
