@@ -24,7 +24,7 @@ ACP je navrhnutý ako modulárny runtime s týmito hlavnými vrstvami:
 ## 5. Ekosystém
 - Komunikácia medzi ACP inštanciami
 - Zdieľanie politík a skúseností
-
+```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
 │                       EKOSYSTÉM (Pilier 9)                                       │
 │              (prostredie, v ktorom žijú všetky ACP inštancie)                    │
@@ -140,3 +140,4 @@ ACP je navrhnutý ako modulárny runtime s týmito hlavnými vrstvami:
 │  └─────────────────────┘                                                         │
 │                                                                                  │
 └──────────────────────────────────────────────────────────────────────────────────┘
+```
