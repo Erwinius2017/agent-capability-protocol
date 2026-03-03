@@ -86,31 +86,70 @@ Tieto typy sa môžu kombinovať a vytvárať tak zložitejšie schopnosti. Samo
 
 ## 3. Interoperabilita s existujúcimi protokolmi
 
-ACP nie je náhrada existujúcich protokolov, ale ich **nadstavba a doplnok**. Vysokotúrovňová interoperabilita je plánovaná nasledovne:
+### 3.1 Princíp protocol stackingu
 
-| Protokol | Spôsob integrácie |
-|----------|-------------------|
-| **MCP** | ACP runtime môže využívať MCP na volanie externých nástrojov. MCP adaptér prekladá interné capability do MCP toolov. |
-| **Nuwa ACP (.acp.yaml)** | Nuwa formát pre popis capability balíčkov môže byť jedným zo vstupných formátov pre import do capability graph. |
-| **A2A** | Pre komunikáciu s inými agentmi môže ACP využívať A2A protokol. A2A adaptér prekladá interné dopyty do A2A správ. |
-| **ANP** | Pre objavovanie agentov v otvorenom internete môže ACP využívať ANP. |
+ACP nie je náhrada existujúcich protokolov, ale ich **nadstavba**. Vychádzame z princípu "protocol stacking", kde každý protokol pokrýva inú vrstvu:
 
-Konkrétna implementácia adaptérov (mapovanie, preklad správ, riešenie konfliktov) je zatiaľ súčasťou uzavretého runtime a nie je verejne dokumentovaná.
+| Vrstva | Protokol | Rola v ACP architektúre |
+|--------|----------|-------------------------|
+| **Tool access** | MCP | ACP runtime volá externé nástroje a API cez MCP adaptér. MCP server poskytuje jednotné rozhranie k databázam, súborom a službám. |
+| **Agent-to-agent komunikácia** | A2A, ACP (IBM) | Pre priamu komunikáciu s inými agentmi (mimo ACP ekosystému) môže ACP využívať A2A alebo IBM ACP protokol. |
+| **Objavovanie agentov** | ANP | Pre nájdenie agentov v otvorenom internete možno využiť ANP s W3C DID identitami. |
+| **Capability balíčky** | Nuwa NIP-7 | .acp.yaml formát slúži ako jeden zo vstupných formátov pre import capability balíčkov. |
+
+### 3.2 ACP adaptéry
+
+Každý adaptér je zodpovedný za:
+- **Mapovanie** – transformáciu medzi externým formátom a interným capability graph
+- **Preklad správ** – konverziu formátov (JSON-RPC, REST, JSON-LD)
+- **Riešenie konfliktov** – ak viacero protokolov ponúka rovnakú funkcionalitu
+
+Adaptéry sú navrhnuté ako **vymeniteľné moduly**. To umožňuje:
+- Pridávať podporu nových protokolov bez zmeny jadra
+- V prípade potreby použiť viacero adaptérov súčasne
+- Izolovať závislosti na externých protokoloch
+
+### 3.3 Príklad: MCP adaptér
+
+MCP používa klient-server architektúru s JSON-RPC 2.0. ACP MCP adaptér:
+
+1. **Discover** – načíta z MCP servera zoznam dostupných toolov (cez `tools/list`)
+2. **Map** – pretransformuje MCP tooly na interné capability (podľa typológie z časti 2)
+3. **Translate** – keď ACP potrebuje zavolať tool, adaptér vytvorí MCP request (`tools/call`)
+4. **Handle response** – spracuje odpoveď a vráti ju do capability graph
 
 ```ascii
-┌───────────────────────┐
-│    ACP Runtime        │
-│  (uzavreté jadro)     │
-└─────────┬─────────────┘
-          │
-┌─────────▼──────────────┐
-│   Adaptéry (rozhranie) │
-├───────────┬────────────┤
-│ MCP │ A2A │ Nuwa │ ANP │
-└─────┴─────┴──────┴─────┘
+┌────────────┐      ┌────────────┐     ┌────────────┐
+│ ACP Core   │────▶│ MCP adaptér│────▶│ MCP server │
+│            │◀────│            │◀────│            │
+└────────────┘      └────────────┘     └────────────┘
+      │                   │                   │
+ capability            JSON-RPC            tool
+    graph              preklad             exec
 ```
 
----
+### 3.4 Príklad: Nuwa adaptér (.acp.yaml)
+
+Nuwa NIP-7 definuje `.acp.yaml` formát pre capability balíčky. ACP Nuwa adaptér:
+
+1. **Parse** – načíta YAML súbor a validuje ho podľa schémy
+2. **Resolve dependencies** – identifikuje závislosti medzi capability
+3. **Transform** – vytvorí z neho interný capability graph (typy: Transaction, Query, atď.)
+4. **Register** – sprístupní capability pre runtime
+
+### 3.5 Overenie interoperability
+
+Interoperabilitu overujeme na troch úrovniach:
+
+| Úroveň | Metóda | Čo overujeme |
+|--------|--------|--------------|
+| **Syntaktická** | Testovanie formátov správ | Či adaptér správne parsuje a generuje správy v očakávanom formáte |
+| **Sémantická** | Testovanie významu | Či preklad zachováva význam (napr. MCP tool → capability) |
+| **Protokolová** | Testovanie sekvencií | Či adaptér dodržuje protokol (napr. MCP lifecycle) |
+
+### 3.6 Poznámka k implementácii
+
+Konkrétna implementácia adaptérov (mapovacie tabuľky, prekladové pravidlá, optimalizácie) je súčasťou uzavretého runtime a nie je verejne dokumentovaná. Tento dokument popisuje len **rozhrania a princípy**, ktoré sú nevyhnutné pre pochopenie interoperability.
 
 ## 4. Poznámka k otvorenosti a spolupráci
 
