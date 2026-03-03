@@ -141,7 +141,7 @@ ACP je navrhnutý ako modulárny runtime s týmito hlavnými vrstvami:
 │                                                                                  │
 └──────────────────────────────────────────────────────────────────────────────────┘
 ```
-
+---
 ### 🧭 Postavenie ACP v ekosystéme agentných protokolov
 
 V súčasnosti existuje niekoľko projektov, ktoré riešia špecifické vrstvy komunikácie v ekosystéme AI agentov. Pre pochopenie jedinečnosti nášho ACP je kľúčové uvedomiť si, že **ACP nepracuje na rovnakej úrovni ako tieto projekty, ale o úroveň vyššie**.
