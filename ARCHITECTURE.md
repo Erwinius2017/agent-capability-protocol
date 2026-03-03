@@ -34,7 +34,7 @@ ACP je navrhnutý ako modulárny runtime s týmito hlavnými vrstvami:
 │  │  │ Ľudia    │  │ Agenti   │  │ API      │  │ Dátové   │  │ Iné ACP      │   │ │
 │  │  │ (CEO,    │  │ (iné     │  │ služby   │  │ zdroje   │  │ inštancie    │   │ │
 │  │  │compliance│  │ systémy) │  │ (SAP,    │  │ (DB,     │  │ (iné         │   │ │
-│  │  │ klienti) │  │          │  │ AWS, ...)│  │ súbory)  │  │ organizáice) │   │ │
+│  │  │ klienti) │  │          │  │ AWS, ...)│  │ súbory)  │  │ organizácie) │   │ │
 │  │  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────────┘   │ │
 │  └───────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┘ │
 │          ▼             ▼             ▼             ▼             ▼               │
