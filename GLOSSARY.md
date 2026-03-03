@@ -21,5 +21,4 @@ Prehľad kľúčových konceptov a ich význam v rámci Agent Capability Protoco
 ---
 
 ✍️ **Autor:** Branislav Šteffek  
-📅 **Dátum:** 3. marec 2026  
 📢 **Licencia:** MIT
