@@ -149,7 +149,7 @@ V súčasnosti existuje niekoľko projektov, ktoré riešia špecifické vrstvy 
 
 | Protokol | Hlavné zameranie |
 |----------|------------------|
-| **MCP (Model Context Protocol)** | Pripojenie agenta k nástrojom a dátam („USB-C pre AI“) |
+| **MCP (Model Context Protocol)** | Pripojenie agenta k nástrojom a dátam („USB-X pre AI“) |
 | **A2A (Agent-to-Agent)** | Priama komunikácia a delegovanie úloh medzi agentmi („Ethernet pre agentov“) |
 | **ACP (Agent Communication Protocol) od IBM/BeeAI** | Štruktúrovaná komunikácia v riadených prostrediach |
 | **ANP (Agent Network Protocol)** | Objavovanie a bezpečná komunikácia v otvorenom, decentralizovanom internete |
