@@ -46,7 +46,7 @@ ACP je navrhnutý ako modulárny runtime s týmito hlavnými vrstvami:
 │                                   ▼                                              │
 │  ┌─────────────────────────────────────────────────────────────────────────────┐ │
 │  │                          RIADIACE JADRO (ACP Core)                          │ │
-│  │                                                                             │ │
+│  │ V jadre prebiehajú tri hlavné kroky, ktoré sú znázornené v diagrame nižšie  │ │
 │  │  ┌──────────────────────────────────────────────────────────────────────┐   │ │
 │  │  │  KROK 1: POROZUMENIE ZÁMERU                                          │   │ │
 │  │  │  (Intent Understanding)                                              │   │ │
