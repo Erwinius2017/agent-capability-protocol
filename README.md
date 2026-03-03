@@ -59,6 +59,11 @@ Pridaj sa k tým, ktorí chcú budovať **živých agentov**, nie ďalšie zozna
 
 ---
 
+## 📚 Ďalšie dokumenty
+
+- [🏗️ Architektúra ACP](ARCHITECTURE.md) – prehľad vrstiev a komponentov
+- [📖 Slovník pojmov](GLOSSARY.md) – vysvetlenie kľúčových konceptov
+
 ✍️ **Autor:** Branislav Šteffek  
 📅 **Dátum:** 17. február 2026  
 📢 **Licencia:** MIT (voľne šíriteľné, otvorené pre každého, kto chce budovať živých agentov)
