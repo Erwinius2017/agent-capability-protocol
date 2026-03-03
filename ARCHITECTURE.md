@@ -141,3 +141,42 @@ ACP je navrhnutý ako modulárny runtime s týmito hlavnými vrstvami:
 │                                                                                  │
 └──────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+### 🧭 Postavenie ACP v ekosystéme agentných protokolov
+
+V súčasnosti existuje niekoľko projektov, ktoré riešia špecifické vrstvy komunikácie v ekosystéme AI agentov. Pre pochopenie jedinečnosti nášho ACP je kľúčové uvedomiť si, že **ACP nepracuje na rovnakej úrovni ako tieto projekty, ale o úroveň vyššie**.
+
+
+| Protokol | Hlavné zameranie |
+|----------|------------------|
+| **MCP (Model Context Protocol)** | Pripojenie agenta k nástrojom a dátam („USB-C pre AI“) |
+| **A2A (Agent-to-Agent)** | Priama komunikácia a delegovanie úloh medzi agentmi („Ethernet pre agentov“) |
+| **ACP (Agent Communication Protocol) od IBM/BeeAI** | Štruktúrovaná komunikácia v riadených prostrediach |
+| **ANP (Agent Network Protocol)** | Objavovanie a bezpečná komunikácia v otvorenom, decentralizovanom internete |
+| **AP2 (Agent Payment Protocol)** | Bezpečné vykonávanie platieb medzi agentmi |
+
+Všetky tieto projekty riešia primárne **konektivitu a výmenu správ**.
+
+Náš **ACP (Agent Capability Protocol)** rieši niečo zásadne odlišné: **vnútorný život, správanie a zodpovednosť agenta**. Je to runtime, ktorý agentovi dáva „telo, pamäť, svedomie a spoločenstvo“.
+
+Zatiaľ čo iné projekty odpovedajú na otázky typu:
+- „Ako zavolám API?“ (MCP)
+- „Ako pošlem úlohu inému agentovi?“ (A2A, ACP)
+- „Ako nájdem agenta na internete?“ (ANP)
+- „Ako zaplatím inému agentovi?“ (AP2)
+
+**ACP odpovedá na otázky:**
+- „Ako sa agent rozhodne, ktorú cestu použiť?“ (Capability Graph, Cost Model)
+- „Ako zaručím, že sa zložitý proces dokončí, alebo vráti späť?“ (Workflow Engine, kompenzácie)
+- „Ako agent nesie zodpovednosť za svoje činy v súlade s jurisdikciou?“ (Policy & Governance)
+- „Ako sa agent učí z vlastných chýb a zlepšuje sa?“ (Evolúcia)
+- „Ako agenti, ako druh, odovzdávajú skúsenosti?“ (Reprodukcia)
+- „Ako agent monitoruje vlastné zdravie a predchádza zlyhaniam?“ (Sebauvedomenie)
+- „Ako agenti vytvárajú spoločenstvá, trhy a kultúru?“ (Ekosystém)
+
+ACP preto nie je náhradou za MCP, A2A či ANP. Naopak, je ich **prirodzeným doplnkom a nadstavbou**. ACP runtime vo svojej vnútornej orchestrácii môže pokojne využívať MCP na volanie nástrojov, A2A na komunikáciu s partnermi, ANP na objavovanie nových služieb a AP2 na platby.
+
+| Vrstva | Riešenie | Príklad otázky |
+|--------|----------|----------------|
+| **Konektivita a výmena správ** | MCP, A2A, ACP (IBM), ANP, AP2 | Ako sa spojiť, komunikovať, odovzdať úlohu, zaplatiť? |
+| **Život a zodpovednosť agenta** | **ACP (Agent Capability Protocol)** | Ako sa rozhodnúť, zaručiť, zodpovedať, poučiť, spolupracovať? |
