@@ -178,5 +178,5 @@ ACP preto nie je náhradou za MCP, A2A či ANP. Naopak, je ich **prirodzeným do
 
 | Vrstva | Riešenie | Príklad otázky |
 |--------|----------|----------------|
-| **Konektivita a výmena správ** | MCP, A2A, ACP (IBM), ANP, AP2 | Ako sa spojiť, komunikovať, odovzdať úlohu, zaplatiť? |
-| **Život a zodpovednosť agenta** | **ACP (Agent Capability Protocol)** | Ako sa rozhodnúť, zaručiť, zodpovedať, poučiť, spolupracovať? |
+| **Konektivita a výmena správ** | MCP, A2A, ACP (IBM/BeeAI), ANP, AP2 | Ako sa spojiť, komunikovať, odovzdať úlohu, zaplatiť? |
+| **Život a zodpovednosť agenta** | **ACP (Agent Capability Protocol)** | Ako sa rozhodnúť, zaručiť, zodpovedať, poučiť sa, spolupracovať? |
