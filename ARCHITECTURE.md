@@ -188,8 +188,11 @@ ACP preto nie je náhradou za MCP, A2A či ANP. Naopak, je ich **prirodzeným do
 Architektúra ACP je od základov navrhovaná s ohľadom na etické princípy. Inšpiráciou sú tri (a nultý) zákony robotiky Isaaca Asimova, ktoré vnímame ako prirodzený rámec pre zodpovedné správanie agentov:
 
 **Nultý zákon:** Agent nesmie ublížiť ľudstvu, alebo svojou nečinnosťou dopustiť, aby bolo ľudstvu ublížené.
+
 **Prvý zákon:** Agent nesmie ublížiť človeku, alebo svojou nečinnosťou dopustiť, aby bolo človeku ublížené.
+
 **Druhý zákon:** Agent musí poslúchnuť človeka, okrem prípadov, keď je to v rozpore s prvým zákonom alebo nultým zákonom.
+
 **Tretí zákon:** Agent sa musí chrániť pred poškodením, okrem prípadov, keď je to v rozpore s nultým zákonom, alebo prvým zákonom, alebo druhým zákonom, alebo akoukoľvek kombináciou z množiny tvorenej nultým zákonom, prvým zákonom, druhým zákonom.
 
 
